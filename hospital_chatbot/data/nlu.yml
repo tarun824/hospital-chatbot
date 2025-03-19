@@ -1,0 +1,140 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  # New
+
+  - intent: hospital_genl_info
+    examples: |
+      - What services does your hospital offer?
+      - Tell me about hospital
+      - tell me some info about this hospital
+
+  - intent: emergency_services
+    examples: |
+      - What should Is do in case of an emergency?
+      - there is an emergency
+      - i want an ambulance
+      - there is an emergency case
+      - there was an accident
+
+  # medicine
+
+  - intent: medicine_enquiry
+    examples: |
+      - can you check for this medicine [medicine](medicine_name)
+      - Do you have [Paracetamol](medicine_name) medicine
+      - I want [medicine](medicine_name) medicine
+
+  # Lab Test
+  - intent: lab_test_enquiry
+    examples: |
+      - Does your hospital have a lab?
+      - Can I get lab tests done at your facility?
+      - Is there a laboratory available for testing?
+      - Do you offer lab services?
+      - What kind of lab tests can I get at your hospital?
+      - Are lab tests conducted on-site?
+      - Can you tell me about the lab facilities at your hospital?
+
+  - intent: show_all_lab_tests
+    examples: |
+      - Tell me all the lab test that you provide
+      - all lab test
+
+  - intent: ask_anything_else_help
+    examples: |
+      - Thank you for the information
+      - ok thank you
+
+  - intent: show_details_of_lab_test
+    examples: |
+      -show_details_of_lab_test

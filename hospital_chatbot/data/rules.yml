@@ -1,0 +1,49 @@
+version: "3.1"
+
+rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Say general info about our hospital
+    steps:
+      - intent: hospital_genl_info
+      - action: utter_hospital_genl_info
+
+  - rule: Emergency Services
+    steps:
+      - intent: emergency_services
+      - action: utter_emergency_services
+
+  # medicine
+
+  - rule: Medicine Enquiry
+    steps:
+      - intent: medicine_enquiry
+      - action: action_medicine_enquiry
+
+  - rule: Regarding Lab Test
+    steps:
+      - intent: lab_test_enquiry
+      - action: utter_lab_test_enquiry
+
+  - rule: showing all the lab tests
+    steps:
+      - intent: show_all_lab_tests
+      - action: action_show_all_lab_tests
+
+  - rule: Ask if there is anything else we can help
+    steps:
+      - intent: ask_anything_else_help
+      - action: utter_ask_anything_else_help
+
+  - rule: show details of single lab test
+    steps:
+      - intent: show_details_of_lab_test
+      - action: action_show_details_of_lab_test

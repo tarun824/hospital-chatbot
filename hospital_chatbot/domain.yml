@@ -1,0 +1,83 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - hospital_genl_info
+  - emergency_services
+  - medicine_enquiry
+  - lab_test_enquiry
+  - show_all_lab_tests
+  - ask_anything_else_help
+  - show_details_of_lab_test
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  # New
+  utter_hospital_genl_info:
+    - text: "Our hospital provides a range of services, including 24/7 emergency care and comprehensive inpatient treatment. We also host specialized clinics in fields such as pediatrics and cardiology to deliver expert medical attention. Furthermore, our focus on preventive care is supported by various patient education and wellness programs"
+
+  utter_emergency_services:
+    - text: "If you are experiencing an emergency, please call our local emergency services 1234567892 immediately."
+
+  utter_ask_anything_else_help:
+    - text: "Is there anything else I can help you with?"
+
+  utter_lab_test_enquiry:
+    - text: "Our hospital's laboratory is fully equipped to handle various medical tests. Would you like to know more about the variety of tests offered?"
+      buttons:
+        - title: "Yes"
+          payload: "/show_all_lab_tests"
+        - title: "No"
+          payload: "/ask_anything_else_help"
+
+entities:
+  - medicine_name
+  - lab_test_id
+
+slots:
+  medicine_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: medicine_name
+  lab_test_id:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: lab_test_id
+
+actions:
+  - action_medicine_enquiry
+  - action_lab_test_enquiry
+  - action_show_all_lab_tests
+  - action_show_details_of_lab_test
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
